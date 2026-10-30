@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <h2>SkillTech</h2>
+    <div class="mode-switch">
+        <button class="shop-btn">Магазин</button>
+        <button class="freelance-btn">Фріланс</button>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Знайти завдання...">
+    </div>
+    <div class="header-profile">
+        <button class="signup-btn">Sign Up</button>
+        <button class="login-btn">Log In</button>
+    </div>
+    <div class="theme-btn">
+        <button class="theme-toggle">🌕</button>
+    </div>
+    </header>
+
+    <main class="main-page">
+        <div class="shop-page">
+            <h2>Магазин SkillTech</h2>
+            <h2 class="page-title">Усі товари</h2>
+            <aside class="filters-sidebar">
+                <h2>Фільтри</h2>
+                <div class="filters-group">
+                    <label for="shop-category">Категорія:</label>
+                    <select id="shop-category">
+                        <option value="all">Усі категорії</option>
+                        <option value="laptops">ноутбуки</option>
+                        <option value="smartphones">смартфони</option>
+                        <option value="accessories">аксесуари</option>
+                    </select>
+                </div>
+            </aside>
+            <div class="grid" id="shop-grid">
+                
+            </div>
+        </div>
+
+        <div class="freelance-page">
+            <h2>Фріланс-платформа SkillTech</h2>
+            <h2 class="page-title">Усі завдання</h2>
+            <aside class="filters-sidebar">
+                <h2>Фільтри</h2>
+                <div class="filters-group">
+                    <label for="freelance-category">Категорія:</label>
+                    <select id="freelance-category">
+                        <option value="all">Усі категорії</option>
+                        <option value="web-development">Веб-розробка</option>
+                        <option value="design">Дизайн</option>
+                        <option value="writing">Письмо</option>
+                    </select>
+                </div>
+            </aside>
+            <div class="grid" id="freelance-grid">
+                
+            </div>
+        </div>
+    </main>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</body>
+</html>

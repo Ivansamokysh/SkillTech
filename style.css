@@ -1,0 +1,176 @@
+/* 1. Базові змінні для світлої теми (за замовчуванням: білий фон, чорний текст) */
+:root {
+    --bg-color: #ffffff;         /* Повністю білий фон сайту */
+    --text-color: #000000;       /* Чорний текст */
+    --card-bg: #f8f9fa;          /* Легкий відтінок для карток/панелей */
+    --border-color: #e5e5e5;     /* Колір бордерів та розділювачів */
+    --header-bg: #ffffff;        /* Фон хедера */
+}
+
+/* 2. Змінні для темної теми (спрацюють при додаванні data-theme="dark") */
+[data-theme="dark"] {
+    --bg-color: #121212;         /* Темний фон */
+    --text-color: #ffffff;       /* Білий текст */
+    --card-bg: #1e1e1e;          /* Темний фон для карток/панелей */
+    --border-color: #333333;     /* Темні бордери */
+    --header-bg: #1a1a1a;        /* Фон хедера для темної теми */
+}
+
+/* 3. Базові стилі сторінки */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==================== ХЕДЕР ==================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Групи кнопок у хедера */
+.mode-switch, 
+.header-profile {
+    display: flex;
+    gap: 10px;
+}
+
+/* Стилізація кнопок та перемикача тем у хедера */
+.mode-switch button, 
+.header-profile button, 
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.mode-switch button:hover, 
+.header-profile button:hover, 
+.theme-toggle:hover {
+    border-color: var(--text-color);
+    background-color: var(--card-bg);
+}
+
+/* Візуальне виділення активної кнопки перемикання режимів */
+.mode-switch button.active {
+    font-weight: bold;
+    border-color: var(--text-color);
+    background-color: var(--card-bg);
+}
+
+/* Пошуковий рядок */
+.search-box input {
+    padding: 8px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 220px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+    border-color: var(--text-color);
+}
+
+/* ==================== ГОЛОВНА ЧАСТИНА ==================== */
+.main-page {
+    padding: 40px;
+}
+
+/* Приховуємо обидві сторінки за замовчуванням */
+.shop-page, 
+.freelance-page {
+    display: none;
+}
+
+/* Показуємо лише ту сторінку, яка має клас .active */
+.shop-page.active, 
+.freelance-page.active {
+    display: block;
+}
+
+/* Сайдбар з фільтрами */
+.filters-sidebar {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+    max-width: 280px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.filters-sidebar h2 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.filters-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filters-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.filters-group select, 
+.filters-group input {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    outline: none;
+}
+
+/* Сітка та картки (для майбутніх товарів/завдань з бази даних) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.page-title {
+    align-items: center;
+    display: flex;  
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
